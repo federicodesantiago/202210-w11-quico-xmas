@@ -1,0 +1,15 @@
+footer {
+    background-color: #f57e60;
+    padding-block: 0.5rem;
+    flex: 1 0 var(--footer-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Spline Sans Mono', monospace;
+}
+
+.footerP,
+address {
+    margin-inline-start: 0.5rem;
+    color: white;
+}
