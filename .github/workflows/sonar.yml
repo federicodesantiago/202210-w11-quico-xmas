@@ -27,7 +27,7 @@ jobs:
           args:
             # Unique keys of your project and organization. You can find them in SonarCloud > Information (bottom-left menu)
             # mandatory
-            -Dsonar.projectKey=federicodesantiago_202210-w10-quico-xmas
+            -Dsonar.projectKey=federicodesantiago_202210-w11-quico-xmas
             -Dsonar.organization=federicodesantiago
             # Comma-separated paths to directories containing main source files.
             #-Dsonar.sources= # optional, default is project base directory
