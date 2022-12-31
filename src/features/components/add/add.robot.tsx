@@ -27,7 +27,7 @@ export function Add({ handleAdd }: { handleAdd: (robot: robotType) => void }) {
                 formData.user as string
             )
         );
-        setFormData(formData);
+        setFormData(initialFormData);
     };
 
     return (

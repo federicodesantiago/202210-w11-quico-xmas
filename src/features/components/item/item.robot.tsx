@@ -12,10 +12,6 @@ export function Item({
     handleUpdate: (task: Partial<robotType>) => void;
     handleDelete: (id: robotType['id']) => void;
 }) {
-    // const handleChange = () => {
-    //     handleUpdate(item);
-    // };
-
     const handleClick = () => {
         handleDelete(item.id);
     };
