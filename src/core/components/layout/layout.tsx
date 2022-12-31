@@ -7,9 +7,9 @@ export function Layout() {
         <>
             <Header></Header>
             <main>
-                <form className="form_Personal">
+                <section className="form_Personal">
                     <AppRoutes></AppRoutes>
-                </form>
+                </section>
             </main>
             <Footer></Footer>
         </>
