@@ -23,6 +23,13 @@ export function Header() {
                             </button>
                         </Link>
                     </li>
+                    <li className="list_header">
+                        <Link to={'/robotsFav'}>
+                            <button className="list_header-button">
+                                Favourites
+                            </button>
+                        </Link>
+                    </li>
                 </ul>
             </nav>
         </header>

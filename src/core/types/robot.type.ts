@@ -6,6 +6,7 @@ export type robotType = {
     creationDate: string;
     user: string;
     imagen: string;
+    favourite: boolean;
 };
 
 export class RobotClass implements robotType {
@@ -34,6 +35,8 @@ export class RobotClass implements robotType {
     id: string;
     creationDate: string;
     imagen: string;
+    favourite: boolean;
+
     constructor(
         public name: string,
         public speed: number,
@@ -43,5 +46,6 @@ export class RobotClass implements robotType {
         this.id = RobotClass.generateId();
         this.creationDate = RobotClass.getDate();
         this.imagen = RobotClass.getImg();
+        this.favourite = false;
     }
 }
