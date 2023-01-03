@@ -1,0 +1,28 @@
+.robotPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.TextBox {
+    font-size: 1rem;
+    width: 10rem;
+}
+
+.sectionLabel {
+    font-size: 0.75rem;
+}
+
+.addButton_container {
+    margin: 1.5rem 1rem;
+}
+
+.addButton {
+    width: 10.5rem;
+}

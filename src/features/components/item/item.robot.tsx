@@ -1,19 +1,26 @@
 import { robotType } from '../../../core/types/robot.type';
 import trash from '../../../assets/trash.webp';
 import addFav from '../../../assets/addFav.webp';
+import remFav from '../../../assets/removeFav.webp';
 import './item.robot.css';
 
 export function Item({
     item,
     handleUpdate,
     handleDelete,
+    handleFavourite,
 }: {
     item: robotType;
     handleUpdate: (task: Partial<robotType>) => void;
     handleDelete: (id: robotType['id']) => void;
+    handleFavourite: (robot: Partial<robotType>) => void;
 }) {
     const handleClick = () => {
         handleDelete(item.id);
+    };
+
+    const handleClickFav = () => {
+        handleFavourite(item);
     };
 
     return (
@@ -56,16 +63,20 @@ export function Item({
                                     className="item-task__end button"
                                     onClick={handleClick}
                                 >
-                                    <img src={trash} alt="buttonpng" />
+                                    <img src={trash} alt="button Delete" />
                                 </button>
                             </li>
                             <li>
                                 <button
                                     type="submit"
                                     className="item-task__end button"
-                                    onClick={handleClick}
+                                    onClick={handleClickFav}
                                 >
-                                    <img src={addFav} alt="buttonpng" />
+                                    {item.favourite ? (
+                                        <img src={remFav} alt="button Remove" />
+                                    ) : (
+                                        <img src={addFav} alt="button Add" />
+                                    )}
                                 </button>
                             </li>
                         </span>

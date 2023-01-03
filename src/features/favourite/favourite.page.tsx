@@ -1,29 +1,24 @@
 import { useEffect, useState } from 'react';
-import { robotType } from '../../../core/types/robot.type';
-import { RobotRepo } from '../../../repository/robotRepo';
-import { Add } from '../add/add.robot';
-import { getRobots, saveRobots } from '../data/mock.service';
-import { Item } from '../item/item.robot';
-import './list.robot.css';
-export function List() {
-    const repo = new RobotRepo();
+import { robotType } from '../../core/types/robot.type';
+import { RobotRepo } from '../../repository/robotRepo';
+import { getRobots, saveRobots } from '../components/data/mock.service';
+import { Item } from '../components/item/item.robot';
+import './favourite.page.css';
+export default function Robots() {
+    const repoFav = new RobotRepo();
     const initialState: Array<robotType> = [];
 
     const [robots, setRobots] = useState(initialState);
 
     const handleLoad = async () => {
-        const data = await getRobots();
-        setRobots(data);
-    };
-
-    const handleAdd = function (robot: robotType) {
-        setRobots([...robots, robot]);
+        const dataFav = await getRobots();
+        setRobots(dataFav);
     };
 
     const handleUpdate = function (robot: Partial<robotType>) {
         setRobots(
             robots.map((item) =>
-                item.id === robot.id ? { ...item, ...robots } : item
+                item.id === robot.id ? { ...item, ...robotFav } : item
             )
         );
     };
@@ -36,10 +31,10 @@ export function List() {
         robot.favourite = !robot.favourite;
         setRobots(
             robots.map((item) =>
-                item.id === robot.id ? { ...item, ...robot } : item
+                item.id === robot.id ? { ...item, ...robotFav } : item
             )
         );
-        await repo.update(robot);
+        await repoFav.update(robot);
     };
 
     useEffect(() => {
@@ -52,11 +47,12 @@ export function List() {
         }
     }, [robots]);
 
+    const robotFav = robots.filter((item) => item.favourite);
+
     return (
         <>
-            <Add handleAdd={handleAdd}></Add>
             <ul className="robot-list">
-                {robots.map((item) => {
+                {robotFav.map((item) => {
                     return (
                         <li key={item.id}>
                             <Item
