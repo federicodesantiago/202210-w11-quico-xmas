@@ -4,53 +4,49 @@ import { Repository } from './repo';
 const invalidIdError = new Error('Invalid ID');
 
 export class RobotRepo implements Repository<RobotClass> {
-    constructor(private url = 'http://localhost:3300/robots/') {
-        //
+    constructor(private url = 'http://localhost:3300/robots/') {}
+
+    async load(): Promise<RobotClass[]> {
+        const resp = await fetch(this.url);
+        if (!resp.ok)
+            throw new Error(`Error ${resp.status}: ${resp.statusText}`);
+        return await resp.json();
     }
 
-    load(): Promise<RobotClass[]> {
-        return fetch(this.url).then((resp) => {
-            if (!resp.ok)
-                throw new Error(`Error ${resp.status}: ${resp.statusText}`);
-            return resp.json();
-        });
-    }
-
-    create(payload: Partial<RobotClass>): Promise<RobotClass> {
-        return fetch(this.url, {
+    async create(payload: Partial<RobotClass>): Promise<RobotClass> {
+        const resp = await fetch(this.url, {
             method: 'POST',
             body: JSON.stringify(payload),
             headers: {
                 'Content-type': 'application/json',
             },
-        }).then((resp) => {
-            if (!resp.ok)
-                throw new Error(`Error ${resp.status}: ${resp.statusText}`);
-            return resp.json();
         });
+        if (!resp.ok)
+            throw new Error(`Error ${resp.status}: ${resp.statusText}`);
+        return await resp.json();
     }
-    update(payload: Partial<RobotClass>) {
+
+    async update(payload: Partial<RobotClass>): Promise<RobotClass> {
         if (!payload.id) return Promise.reject(invalidIdError);
-        return fetch(this.url + payload.id, {
+        const resp = await fetch(this.url + payload.id, {
             method: 'PATCH',
             body: JSON.stringify(payload),
             headers: {
                 'Content-type': 'application/json',
             },
-        }).then((resp) => {
-            if (!resp.ok)
-                throw new Error(`Error ${resp.status}: ${resp.statusText}`);
-            return resp.json();
         });
+        if (!resp.ok)
+            throw new Error(`Error ${resp.status}: ${resp.statusText}`);
+        return await resp.json();
     }
-    delete(id: string): Promise<string> {
+
+    async delete(id: RobotClass['id']): Promise<RobotClass['id']> {
         if (!id) return Promise.reject(invalidIdError);
-        return fetch(this.url + id, {
+        const resp = await fetch(this.url + id, {
             method: 'DELETE',
-        }).then((resp) => {
-            if (!resp.ok)
-                throw new Error(`Error ${resp.status}: ${resp.statusText}`);
-            return id;
         });
+        if (!resp.ok)
+            throw new Error(`Error ${resp.status}: ${resp.statusText}`);
+        return id;
     }
 }

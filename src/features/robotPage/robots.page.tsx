@@ -6,12 +6,10 @@ export default function RobotsPage({
     robots,
     handleAdd,
     handleDelete,
-    handleUpdate,
     handleFavourite,
 }: {
     robots: Array<robotType>;
     handleAdd: (robot: robotType) => void;
-    handleUpdate: (task: Partial<robotType>) => void;
     handleDelete: (id: robotType['id']) => void;
     handleFavourite: (robot: Partial<robotType>) => void;
 }) {
@@ -20,7 +18,6 @@ export default function RobotsPage({
             <List
                 robots={robots}
                 handleAdd={handleAdd}
-                handleUpdate={handleUpdate}
                 handleDelete={handleDelete}
                 handleFavourite={handleFavourite}
             ></List>

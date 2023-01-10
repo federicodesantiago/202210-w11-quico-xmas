@@ -6,12 +6,10 @@ import './item.robot.css';
 
 export function Item({
     item,
-    handleUpdate,
     handleDelete,
     handleFavourite,
 }: {
     item: robotType;
-    handleUpdate: (task: Partial<robotType>) => void;
     handleDelete: (id: robotType['id']) => void;
     handleFavourite: (robot: Partial<robotType>) => void;
 }) {
@@ -32,24 +30,16 @@ export function Item({
                 <div>
                     <ul className="itemData">
                         <li>
-                            <p>
-                                Name: <span>{item.name}</span>
-                            </p>
+                            <p>Name: {item.name}</p>
                         </li>
                         <li>
-                            <p>
-                                Speed: <span>{item.speed}</span>
-                            </p>
+                            <p>Speed: {item.speed}</p>
                         </li>
                         <li>
-                            <p>
-                                Stamina: <span>{item.stamina}</span>
-                            </p>
+                            <p>Stamina: {item.stamina}</p>
                         </li>
                         <li>
-                            <p>
-                                User: <span>{item.user}</span>
-                            </p>
+                            <p>User: {item.user}</p>
                         </li>
                         <li>
                             <p>

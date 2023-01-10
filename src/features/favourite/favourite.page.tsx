@@ -3,12 +3,10 @@ import { Item } from '../components/item/item.robot';
 import './favourite.page.css';
 export default function RobotsFav({
     robots,
-    handleUpdate,
     handleDelete,
     handleFavourite,
 }: {
     robots: Array<robotType>;
-    handleUpdate: (task: Partial<robotType>) => void;
     handleDelete: (id: robotType['id']) => void;
     handleFavourite: (robot: Partial<robotType>) => void;
 }) {
@@ -22,7 +20,6 @@ export default function RobotsFav({
                         <li key={item.id}>
                             <Item
                                 item={item}
-                                handleUpdate={handleUpdate}
                                 handleDelete={handleDelete}
                                 handleFavourite={handleFavourite}
                             ></Item>
