@@ -12,7 +12,7 @@ export type robotType = {
 export class RobotClass implements robotType {
     static generateId() {
         const aNumbers = new Uint32Array(1);
-        crypto.getRandomValues(aNumbers);
+        window.crypto?.getRandomValues(aNumbers);
         return ('000000' + aNumbers[0]).slice(-6);
     }
 

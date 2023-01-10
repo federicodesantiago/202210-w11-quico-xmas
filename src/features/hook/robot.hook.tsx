@@ -19,14 +19,6 @@ export function useRobot() {
         setRobots([...robots, robot]);
     };
 
-    const handleUpdate = async function (robot: Partial<robotType>) {
-        setRobots(
-            robots.map((item) =>
-                item.id === robot.id ? { ...item, ...robots } : item
-            )
-        );
-    };
-
     const handleDelete = async function (id: robotType['id']) {
         setRobots(robots.filter((item) => item.id !== id));
     };
@@ -41,21 +33,10 @@ export function useRobot() {
         await repo.update(robot);
     };
 
-    // useEffect(() => {
-    //     handleLoad();
-    // }, []);
-
-    // useEffect(() => {
-    //     if (robots.length) {
-    //         saveRobots(robots);
-    //     }
-    // }, [robots]);
-
     return {
         robots,
         handleLoad,
         handleAdd,
-        handleUpdate,
         handleDelete,
         handleFavourite,
     };
