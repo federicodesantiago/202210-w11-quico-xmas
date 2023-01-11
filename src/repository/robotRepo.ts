@@ -12,6 +12,14 @@ export class RobotRepo implements Repository<RobotClass> {
             throw new Error(`Error ${resp.status}: ${resp.statusText}`);
         return await resp.json();
     }
+    async queryId(id: string): Promise<RobotClass> {
+        if (!id || typeof id !== 'string')
+            return Promise.reject(invalidIdError);
+        const resp = await fetch(this.url + id);
+        if (!resp.ok)
+            throw new Error(`Error ${resp.status}: ${resp.statusText}`);
+        return await resp.json();
+    }
 
     async create(payload: Partial<RobotClass>): Promise<RobotClass> {
         const resp = await fetch(this.url, {
@@ -39,7 +47,6 @@ export class RobotRepo implements Repository<RobotClass> {
             throw new Error(`Error ${resp.status}: ${resp.statusText}`);
         return await resp.json();
     }
-
     async delete(id: RobotClass['id']): Promise<RobotClass['id']> {
         if (!id) return Promise.reject(invalidIdError);
         const resp = await fetch(this.url + id, {

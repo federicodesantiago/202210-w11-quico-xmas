@@ -24,7 +24,8 @@
         "eject": "react-scripts eject",
         "test:all": "react-scripts test --watchAll --collect-coverage",
         "test:prod": "react-scripts test --watchAll --collect-coverage --watchAll=false",
-        "lint": "eslint ."
+        "lint": "eslint .",
+        "server": "json-server --watch db.json --port 3300"
     },
     "prettier": {
         "singleQuote": true
