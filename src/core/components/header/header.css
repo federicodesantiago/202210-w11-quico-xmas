@@ -11,7 +11,8 @@ header {
 }
 
 h1 {
-    margin: 0;
+    margin-left: 2rem;
+    margin-right: auto;
 }
 
 .list_header {
@@ -36,9 +37,4 @@ nav {
 ul {
     display: flex;
     flex-direction: row;
-}
-
-h1 {
-    margin-left: 2rem;
-    margin-right: auto;
 }
