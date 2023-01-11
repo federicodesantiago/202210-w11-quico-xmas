@@ -1,14 +1,14 @@
 {
-  "robots": [
-    {
-      "name": " Holi",
-      "speed": "3",
-      "stamina": "3",
-      "user": " popoe",
-      "id": "150214",
-      "creationDate": "2023/1/10",
-      "imagen": "https://robohash.org/326747.png",
-      "favourite": true
-    }
-  ]
+    "robots": [
+        {
+            "name": " Holi",
+            "speed": "3",
+            "stamina": "3",
+            "user": " popoe",
+            "id": "150214",
+            "creationDate": "2023/1/10",
+            "imagen": "https://robohash.org/326747.png",
+            "favourite": true
+        }
+    ]
 }
