@@ -1,14 +1,34 @@
 {
     "robots": [
         {
-            "name": " Holi",
+            "name": "asd",
             "speed": "3",
-            "stamina": "3",
-            "user": " popoe",
-            "id": "150214",
-            "creationDate": "2023/1/10",
-            "imagen": "https://robohash.org/326747.png",
+            "stamina": "2",
+            "user": " popo",
+            "id": "246743",
+            "creationDate": "2023/1/12",
+            "imagen": "https://robohash.org/513469.png",
             "favourite": true
+        },
+        {
+            "name": " ",
+            "speed": 0,
+            "stamina": "2",
+            "user": " ",
+            "id": "360440",
+            "creationDate": "2023/1/12",
+            "imagen": "https://robohash.org/175855.png",
+            "favourite": false
+        },
+        {
+            "name": " hola",
+            "speed": "10",
+            "stamina": 0,
+            "user": " ",
+            "id": "995792",
+            "creationDate": "2023/1/12",
+            "imagen": "https://robohash.org/598104.png",
+            "favourite": false
         }
     ]
 }

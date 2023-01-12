@@ -19,6 +19,15 @@ export function useRobot() {
         setRobots([...robots, newRobot]);
     };
 
+    const handleUpdate = async function (robot: Partial<robotType>) {
+        setRobots(
+            robots.map((item) =>
+                item.id === robot.id ? { ...item, ...robot } : item
+            )
+        );
+        await repo.update(robot);
+    };
+
     const handleDelete = async function (id: robotType['id']) {
         setRobots(robots.filter((item) => item.id !== id));
     };
@@ -37,6 +46,7 @@ export function useRobot() {
         robots,
         handleLoad,
         handleAdd,
+        handleUpdate,
         handleDelete,
         handleFavourite,
     };

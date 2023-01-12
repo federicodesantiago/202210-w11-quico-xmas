@@ -6,11 +6,13 @@ import './list.robot.css';
 export function List({
     robots,
     handleAdd,
+    handleUpdate,
     handleDelete,
     handleFavourite,
 }: {
     robots: Array<robotType>;
     handleAdd: (robot: robotType) => void;
+    handleUpdate: (robot: Partial<robotType>) => void;
     handleDelete: (id: robotType['id']) => void;
     handleFavourite: (robot: Partial<robotType>) => void;
 }) {
@@ -23,6 +25,7 @@ export function List({
                         <li key={item.id}>
                             <Item
                                 item={item}
+                                handleUpdate={handleUpdate}
                                 handleDelete={handleDelete}
                                 handleFavourite={handleFavourite}
                             ></Item>

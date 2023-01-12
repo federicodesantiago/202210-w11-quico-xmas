@@ -9,12 +9,14 @@ export function AppRoutes({
     items,
     robots,
     handleAdd,
+    handleUpdate,
     handleDelete,
     handleFavourite,
 }: {
     items: MenuItems;
     robots: Array<robotType>;
     handleAdd: (robot: robotType) => void;
+    handleUpdate: (robot: Partial<robotType>) => void;
     handleDelete: (id: robotType['id']) => void;
     handleFavourite: (robot: Partial<robotType>) => void;
 }) {
@@ -30,6 +32,7 @@ export function AppRoutes({
                     <RobotsPage
                         robots={robots}
                         handleAdd={handleAdd}
+                        handleUpdate={handleUpdate}
                         handleDelete={handleDelete}
                         handleFavourite={handleFavourite}
                     ></RobotsPage>
@@ -40,6 +43,7 @@ export function AppRoutes({
                 element={
                     <RobotsFav
                         robots={robots}
+                        handleUpdate={handleUpdate}
                         handleDelete={handleDelete}
                         handleFavourite={handleFavourite}
                     ></RobotsFav>

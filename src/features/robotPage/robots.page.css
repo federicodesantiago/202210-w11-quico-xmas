@@ -10,13 +10,39 @@
     margin: 1rem;
 }
 
+.sectionUpdate {
+    display: flex;
+    flex-direction: row;
+    margin: 0.25rem 0rem;
+}
+
 .TextBox {
     font-size: 1rem;
     width: 10rem;
 }
 
+.TextBoxUpdate {
+    border: none;
+    font-size: 1rem;
+    width: 8rem;
+}
+
+.TextBoxUpdateStamina {
+    width: 6.2rem;
+}
+
+.TextBoxUpdateSpeed {
+    width: 7.4rem;
+}
 .sectionLabel {
     font-size: 0.75rem;
+}
+
+.sectionLabelUpdate {
+    font-size: 1rem;
+    margin: 0.25rem;
+    margin-inline-end: 1rem;
+    padding: 0;
 }
 
 .addButton_container {

@@ -5,11 +5,13 @@ import './robots.page.css';
 export default function RobotsPage({
     robots,
     handleAdd,
+    handleUpdate,
     handleDelete,
     handleFavourite,
 }: {
     robots: Array<robotType>;
     handleAdd: (robot: robotType) => void;
+    handleUpdate: (robot: Partial<robotType>) => void;
     handleDelete: (id: robotType['id']) => void;
     handleFavourite: (robot: Partial<robotType>) => void;
 }) {
@@ -18,6 +20,7 @@ export default function RobotsPage({
             <List
                 robots={robots}
                 handleAdd={handleAdd}
+                handleUpdate={handleUpdate}
                 handleDelete={handleDelete}
                 handleFavourite={handleFavourite}
             ></List>

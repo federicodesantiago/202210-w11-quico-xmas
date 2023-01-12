@@ -34,6 +34,7 @@ describe('Given robot component', () => {
             render(
                 <RobotsFav
                     robots={mockRobots}
+                    handleUpdate={mockFavourite}
                     handleDelete={mockDelete}
                     handleFavourite={mockFavourite}
                 ></RobotsFav>
