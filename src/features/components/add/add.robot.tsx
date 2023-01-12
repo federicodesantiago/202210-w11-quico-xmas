@@ -91,7 +91,7 @@ export function Add({ handleAdd }: { handleAdd: (robot: robotType) => void }) {
                             type="text"
                             name="user"
                             id="user"
-                            placeholder="Name of your robot"
+                            placeholder="Creator name"
                             value={formData.user}
                             onInput={handleInput}
                             required

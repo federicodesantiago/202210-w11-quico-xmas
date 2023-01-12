@@ -23,6 +23,7 @@ describe('Given robot component', () => {
             render(
                 <Item
                     item={mockRobot}
+                    handleUpdate={mockFavourite}
                     handleDelete={mockDelete}
                     handleFavourite={mockFavourite}
                 ></Item>

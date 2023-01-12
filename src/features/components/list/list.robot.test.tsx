@@ -33,6 +33,7 @@ describe('Given "List" component', () => {
                 <List
                     robots={mockRobots}
                     handleAdd={mockAdd}
+                    handleUpdate={mockFavourite}
                     handleDelete={mockDelete}
                     handleFavourite={mockFavourite}
                 ></List>

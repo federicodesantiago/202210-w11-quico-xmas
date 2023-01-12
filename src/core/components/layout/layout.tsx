@@ -9,12 +9,14 @@ export function Layout({
     items,
     robots,
     handleAdd,
+    handleUpdate,
     handleDelete,
     handleFavourite,
 }: {
     items: MenuItems;
     robots: Array<robotType>;
     handleAdd: (robot: robotType) => void;
+    handleUpdate: (robot: Partial<robotType>) => void;
     handleDelete: (id: robotType['id']) => void;
     handleFavourite: (robot: Partial<robotType>) => void;
 }) {
@@ -29,6 +31,7 @@ export function Layout({
                         items={items}
                         robots={robots}
                         handleAdd={handleAdd}
+                        handleUpdate={handleUpdate}
                         handleDelete={handleDelete}
                         handleFavourite={handleFavourite}
                     ></AppRoutes>

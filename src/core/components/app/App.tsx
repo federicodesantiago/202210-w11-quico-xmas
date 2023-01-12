@@ -10,10 +10,17 @@ export function App() {
         { path: '/HomePage', label: 'Inicio' },
         { path: 'robotsPage', label: 'RobotPage' },
         { path: 'robotsFav', label: 'Favoritos' },
+        { path: 'detailsPage', label: 'Detalles' },
     ];
 
-    const { robots, handleLoad, handleAdd, handleDelete, handleFavourite } =
-        useRobot();
+    const {
+        robots,
+        handleLoad,
+        handleAdd,
+        handleUpdate,
+        handleDelete,
+        handleFavourite,
+    } = useRobot();
 
     useEffect(() => {
         handleLoad();
@@ -30,6 +37,7 @@ export function App() {
             items={items}
             robots={robots}
             handleAdd={handleAdd}
+            handleUpdate={handleUpdate}
             handleDelete={handleDelete}
             handleFavourite={handleFavourite}
         ></Layout>
